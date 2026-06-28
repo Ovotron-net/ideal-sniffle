@@ -1,0 +1,128 @@
+{
+  "siteContent": {
+    "heroStats": [
+      { "count": 500, "suffix": "+", "label": "Assessments Delivered" },
+      { "count": 99, "suffix": ".9%", "label": "Client Retention" },
+      { "count": 24, "suffix": "/7", "label": "Incident Response" }
+    ],
+    "services": [
+      {
+        "title": "Penetration Testing",
+        "description": "Simulated real-world attacks to uncover vulnerabilities before adversaries exploit them.",
+        "iconKey": "penetration-testing"
+      },
+      {
+        "title": "Cloud Security",
+        "description": "Architecture reviews, misconfiguration audits, and hardening across AWS, Azure, and GCP.",
+        "iconKey": "cloud-security"
+      },
+      {
+        "title": "Web Application Security",
+        "description": "Deep application testing covering OWASP Top 10, API security, and business logic flaws.",
+        "iconKey": "web-app-security"
+      },
+      {
+        "title": "Red Team Assessments",
+        "description": "Full-scope adversary simulation testing detection, response, and human factors.",
+        "iconKey": "red-team"
+      },
+      {
+        "title": "Blue Team Defense",
+        "description": "SIEM tuning, detection engineering, and defensive playbook development.",
+        "iconKey": "blue-team"
+      },
+      {
+        "title": "Security Awareness Training",
+        "description": "Phishing simulations and role-based training that measurably reduces human risk.",
+        "iconKey": "awareness-training"
+      },
+      {
+        "title": "Incident Response",
+        "description": "Rapid containment, forensic analysis, and recovery when breaches occur.",
+        "iconKey": "incident-response"
+      },
+      {
+        "title": "Vulnerability Management",
+        "description": "Continuous scanning, prioritization, and remediation tracking aligned to risk.",
+        "iconKey": "vulnerability-management"
+      }
+    ],
+    "trustPoints": [
+      {
+        "num": "01",
+        "title": "Ethical Security Expertise",
+        "description": "Certified practitioners bound by strict engagement ethics and responsible disclosure."
+      },
+      {
+        "num": "02",
+        "title": "Business-Focused Risk Reporting",
+        "description": "Findings mapped to financial impact, compliance requirements, and operational risk."
+      },
+      {
+        "num": "03",
+        "title": "Hands-On Technical Assessments",
+        "description": "No automated-only reports — every engagement includes expert manual validation."
+      },
+      {
+        "num": "04",
+        "title": "Clear Remediation Guidance",
+        "description": "Actionable fix instructions with priority tiers your engineering team can execute."
+      },
+      {
+        "num": "05",
+        "title": "Modern Attack Simulation",
+        "description": "Techniques aligned to current threat actor TTPs, not outdated playbook testing."
+      },
+      {
+        "num": "06",
+        "title": "Secure-by-Design Consulting",
+        "description": "Embed security into architecture decisions before code ships to production."
+      }
+    ],
+    "processSteps": [
+      { "step": 1, "title": "Discover", "description": "Map your attack surface, assets, and business-critical systems." },
+      { "step": 2, "title": "Assess", "description": "Identify vulnerabilities through automated and manual analysis." },
+      { "step": 3, "title": "Exploit Safely", "description": "Validate findings with controlled exploitation in scoped environments." },
+      { "step": 4, "title": "Report", "description": "Deliver executive summaries and technical deep-dives with evidence." },
+      { "step": 5, "title": "Remediate", "description": "Guide your team through prioritized fixes with retest validation." },
+      { "step": 6, "title": "Strengthen", "description": "Build lasting security posture through monitoring and continuous testing." }
+    ],
+    "industries": [
+      { "icon": "◈", "title": "Financial Services", "description": "PCI-DSS, SOC 2, and fraud-resistant infrastructure." },
+      { "icon": "◇", "title": "SaaS Companies", "description": "Multi-tenant security and customer trust at scale." },
+      { "icon": "◆", "title": "E-commerce", "description": "Payment security and customer data protection." },
+      { "icon": "○", "title": "Healthcare", "description": "HIPAA-aligned assessments and PHI safeguards." },
+      { "icon": "▣", "title": "Startups", "description": "Security foundations that scale with your growth." },
+      { "icon": "◎", "title": "Cloud-Native Businesses", "description": "Container, serverless, and IaC security expertise." }
+    ],
+    "footerServices": ["Penetration Testing", "Cloud Security", "Red Team", "Incident Response"]
+  },
+  "threatFeed": [
+    { "tag": "BLOCKED", "message": "SQL injection attempt — 10.0.4.22", "severity": "safe" },
+    { "tag": "SCAN", "message": "Port sweep detected — external", "severity": "warn" },
+    { "tag": "PATCHED", "message": "CVE-2025-4891 remediated", "severity": "safe" }
+  ],
+  "caseStudies": [
+    {
+      "id": "cs-fintech-01",
+      "industry": "Financial Services",
+      "title": "Zero-Day Prevention for a Tier-1 Bank",
+      "outcome": "Reduced critical findings by 78% in 90 days",
+      "services": ["Penetration Testing", "Cloud Security"]
+    },
+    {
+      "id": "cs-saas-02",
+      "industry": "SaaS",
+      "title": "Multi-Tenant Isolation Hardening",
+      "outcome": "Passed SOC 2 Type II with zero high-severity gaps",
+      "services": ["Web Application Security", "Blue Team Defense"]
+    },
+    {
+      "id": "cs-health-03",
+      "industry": "Healthcare",
+      "title": "PHI Boundary Assessment",
+      "outcome": "Closed 42 HIPAA-aligned gaps before audit window",
+      "services": ["Vulnerability Management", "Incident Response"]
+    }
+  ]
+}

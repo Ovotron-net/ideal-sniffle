@@ -1,0 +1,24 @@
+/* ===== Design Tokens ===== */
+:root {
+  --black: #050508;
+  --charcoal: #0c0e14;
+  --charcoal-light: #141820;
+  --surface: rgba(20, 24, 32, 0.65);
+  --surface-border: rgba(255, 255, 255, 0.06);
+  --electric-blue: #0066ff;
+  --cyan: #00d4ff;
+  --violet: #7c3aed;
+  --green: #10b981;
+  --text-primary: #f0f2f8;
+  --text-secondary: #8b93a8;
+  --text-muted: #5c6478;
+  --gradient-accent: linear-gradient(135deg, var(--cyan) 0%, var(--electric-blue) 40%, var(--violet) 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(124, 58, 237, 0.15));
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --header-height: 72px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

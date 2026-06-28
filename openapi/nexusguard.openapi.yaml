@@ -1,0 +1,267 @@
+openapi: 3.1.0
+info:
+  title: NexusGuard API
+  version: 1.0.0
+  description: Content API for the NexusGuard cybersecurity website.
+
+servers:
+  - url: /api/v1
+    description: Relative path (MSW or Vite proxy)
+  - url: http://localhost:3001/api/v1
+    description: Local dev API server
+
+paths:
+  /site-content:
+    get:
+      operationId: getSiteContent
+      summary: Get all public site content
+      tags:
+        - Content
+      responses:
+        '200':
+          description: Site content payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SiteContent'
+              example:
+                heroStats:
+                  - count: 500
+                    suffix: '+'
+                    label: Assessments Delivered
+                services:
+                  - title: Penetration Testing
+                    description: Simulated real-world attacks to uncover vulnerabilities before adversaries exploit them.
+                    iconKey: penetration-testing
+                trustPoints:
+                  - num: '01'
+                    title: Ethical Security Expertise
+                    description: Certified practitioners bound by strict engagement ethics and responsible disclosure.
+                processSteps:
+                  - step: 1
+                    title: Discover
+                    description: Map your attack surface, assets, and business-critical systems.
+                industries:
+                  - icon: '◈'
+                    title: Financial Services
+                    description: PCI-DSS, SOC 2, and fraud-resistant infrastructure.
+                footerServices:
+                  - Penetration Testing
+
+  /threat-feed:
+    get:
+      operationId: getThreatFeed
+      summary: Get live threat signals for SOC dashboard
+      tags:
+        - Monitoring
+      responses:
+        '200':
+          description: Active threat feed entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ThreatFeedItem'
+              example:
+                - tag: BLOCKED
+                  message: SQL injection attempt — 10.0.4.22
+                  severity: safe
+
+  /case-studies:
+    get:
+      operationId: getCaseStudies
+      summary: Get published security engagement case studies
+      tags:
+        - Content
+      responses:
+        '200':
+          description: Case study list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CaseStudy'
+              example:
+                - id: cs-fintech-01
+                  industry: Financial Services
+                  title: Zero-Day Prevention for a Tier-1 Bank
+                  outcome: Reduced critical findings by 78% in 90 days
+                  services: [Penetration Testing, Cloud Security]
+
+  /consultation-requests:
+    post:
+      operationId: createConsultationRequest
+      summary: Submit a security consultation request
+      tags:
+        - Leads
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsultationRequest'
+            example:
+              name: Alex Morgan
+              email: alex@acme.io
+              company: Acme Corp
+              message: Need a full external pentest for our cloud platform.
+      responses:
+        '201':
+          description: Consultation request accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsultationResponse'
+              example:
+                id: req_8f2a91c4
+                status: received
+                message: Your request has been received. Our team will respond within one business day.
+
+components:
+  schemas:
+    HeroStat:
+      type: object
+      required: [count, suffix, label]
+      properties:
+        count:
+          type: integer
+        suffix:
+          type: string
+        label:
+          type: string
+
+    Service:
+      type: object
+      required: [title, description, iconKey]
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        iconKey:
+          type: string
+
+    TrustPoint:
+      type: object
+      required: [num, title, description]
+      properties:
+        num:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+
+    ProcessStep:
+      type: object
+      required: [step, title, description]
+      properties:
+        step:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+
+    Industry:
+      type: object
+      required: [icon, title, description]
+      properties:
+        icon:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+
+    SiteContent:
+      type: object
+      required:
+        - heroStats
+        - services
+        - trustPoints
+        - processSteps
+        - industries
+        - footerServices
+      properties:
+        heroStats:
+          type: array
+          items:
+            $ref: '#/components/schemas/HeroStat'
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+        trustPoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/TrustPoint'
+        processSteps:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessStep'
+        industries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Industry'
+        footerServices:
+          type: array
+          items:
+            type: string
+
+    ThreatFeedItem:
+      type: object
+      required: [tag, message, severity]
+      properties:
+        tag:
+          type: string
+        message:
+          type: string
+        severity:
+          type: string
+          enum: [safe, warn, critical]
+
+    CaseStudy:
+      type: object
+      required: [id, industry, title, outcome, services]
+      properties:
+        id:
+          type: string
+        industry:
+          type: string
+        title:
+          type: string
+        outcome:
+          type: string
+        services:
+          type: array
+          items:
+            type: string
+
+    ConsultationRequest:
+      type: object
+      required: [name, email, company, message]
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        company:
+          type: string
+        message:
+          type: string
+
+    ConsultationResponse:
+      type: object
+      required: [id, status, message]
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum: [received, scheduled, closed]
+        message:
+          type: string

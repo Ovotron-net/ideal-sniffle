@@ -1,0 +1,66 @@
+/* ===== CTA Form ===== */
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+}
+
+.cta-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cta-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cta-form label span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cta-form input,
+.cta-form textarea {
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color var(--transition);
+}
+
+.cta-form input:focus,
+.cta-form textarea:focus {
+  outline: none;
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+.cta-form .btn { align-self: center; margin-top: 0.5rem; }
+
+.cta-success {
+  color: var(--green);
+  font-size: 1.05rem;
+  position: relative;
+}
+
+.cta-error {
+  color: #f87171;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.feed-critical .feed-tag { color: #ef4444; }
+.feed-critical { border-left-color: #ef4444; }

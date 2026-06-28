@@ -1,0 +1,53 @@
+/* ===== Why Us ===== */
+.why-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.why-content .section-tag,
+.why-content .section-title,
+.why-content .section-desc { text-align: left; }
+
+.trust-points {
+  display: grid;
+  gap: 1rem;
+}
+
+.trust-item {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.trust-item:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  background: rgba(124, 58, 237, 0.04);
+  transform: translateX(8px);
+}
+
+.trust-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--violet);
+  font-weight: 500;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.trust-item h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.trust-item p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
