@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexusguard.io/sitemap.xml
+Sitemap: https://ovotron.io/sitemap.xml

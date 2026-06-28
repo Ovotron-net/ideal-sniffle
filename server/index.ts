@@ -42,6 +42,6 @@ app.get('/health', (c) => c.json({ status: 'ok' }))
 
 const port = Number(process.env.API_PORT ?? 3001)
 
-console.log(`NexusGuard API listening on http://localhost:${port}/api/v1`)
+console.log(`Ovotron API listening on http://localhost:${port}/api/v1`)
 
 serve({ fetch: app.fetch, port })

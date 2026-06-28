@@ -1,5 +1,5 @@
 import { createRootRoute, createRoute, createRouter } from '@tanstack/react-router'
-import { buildRouteHead } from './config/seo'
+import { buildRouteHead, siteBrand } from './config/seo'
 import { HomePage } from './routes/HomePage'
 import { LegalPage } from './routes/LegalPage'
 import { RootLayout } from './routes/RootLayout'
@@ -21,14 +21,14 @@ const privacyRoute = createRoute({
   component: () => (
     <LegalPage title="Privacy Policy">
       <p>
-        NexusGuard respects your privacy. We collect only the information necessary to deliver
+        {siteBrand.name} respects your privacy. We collect only the information necessary to deliver
         security assessments and respond to inquiries. Data is encrypted in transit and at rest,
         retained only for the duration required by engagement contracts, and never sold to third
         parties.
       </p>
       <p>
         For data access requests or privacy questions, contact{' '}
-        <a href="mailto:privacy@nexusguard.io">privacy@nexusguard.io</a>.
+        <a href={`mailto:${siteBrand.emails.privacy}`}>{siteBrand.emails.privacy}</a>.
       </p>
     </LegalPage>
   ),
@@ -41,13 +41,13 @@ const termsRoute = createRoute({
   component: () => (
     <LegalPage title="Terms of Service">
       <p>
-        By engaging NexusGuard services, you agree to scoped testing boundaries, responsible
+        By engaging {siteBrand.name} services, you agree to scoped testing boundaries, responsible
         disclosure protocols, and confidentiality terms outlined in your statement of work.
         Unauthorized security testing outside agreed scope is prohibited.
       </p>
       <p>
         For contractual questions, contact{' '}
-        <a href="mailto:legal@nexusguard.io">legal@nexusguard.io</a>.
+        <a href={`mailto:${siteBrand.emails.legal}`}>{siteBrand.emails.legal}</a>.
       </p>
     </LegalPage>
   ),

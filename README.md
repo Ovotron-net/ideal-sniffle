@@ -1,4 +1,4 @@
-# NexusGuard — Cybersecurity Website
+# Ovotron — Cybersecurity Website
 
 A modern, animated single-page website for an enterprise cybersecurity business.
 
@@ -36,7 +36,7 @@ Copy `.env.example` → `.env.local`:
 
 ```env
 VITE_USE_MSW=false
-VITE_API_URL=https://api.nexusguard.io/api/v1
+VITE_API_URL=https://api.ovotron.io/api/v1
 ```
 
 ## Scripts
@@ -47,6 +47,7 @@ VITE_API_URL=https://api.nexusguard.io/api/v1
 | `npm run dev:api` | Hono API server only (`:3001`) |
 | `npm run dev:full` | API server + Vite (no MSW) |
 | `npm run generate:api` | Regenerate from OpenAPI spec |
+| `npm run generate:seo` | Regenerate sitemap, robots.txt, og-image.png |
 | `npm run build` | Production build |
 
 ## API Endpoints
@@ -58,7 +59,7 @@ VITE_API_URL=https://api.nexusguard.io/api/v1
 | GET | `/api/v1/case-studies` | Published case studies |
 | POST | `/api/v1/consultation-requests` | Submit consultation form |
 
-Spec: `openapi/nexusguard.openapi.yaml`
+Spec: `openapi/ovotron.openapi.yaml`
 
 ## Environment Variables
 
@@ -67,17 +68,19 @@ Spec: `openapi/nexusguard.openapi.yaml`
 | `VITE_USE_MSW` | `true` | Enable MSW in dev |
 | `VITE_API_URL` | `/api/v1` | API base URL |
 | `VITE_API_PROXY_TARGET` | `http://localhost:3001` | Vite proxy target |
-| `VITE_SITE_URL` | `https://nexusguard.io` | Canonical site URL for SEO meta |
+| `VITE_SITE_URL` | `https://ovotron.io` | Canonical site URL for SEO meta |
 
 ## SEO
 
-Per-route `<title>`, description, Open Graph, and Twitter cards are managed via TanStack Router `head()` in [`src/router.tsx`](src/router.tsx), with defaults in [`src/config/seo.ts`](src/config/seo.ts).
+Per-route `<title>`, description, Open Graph, and Twitter cards are managed via TanStack Router `head()` in [`src/router.tsx`](src/router.tsx), with defaults in [`src/config/seo.ts`](src/config/seo.ts). Brand name, contact emails, social links, and logo text live in [`src/config/brand.ts`](src/config/brand.ts).
 
-Static crawl assets:
+Static crawl assets are generated from the same site URL as SEO meta (`VITE_SITE_URL`):
 
 - [`public/robots.txt`](public/robots.txt)
 - [`public/sitemap.xml`](public/sitemap.xml)
 - [`public/og-image.png`](public/og-image.png) — social preview image
+
+Run `npm run generate:seo` after changing `VITE_SITE_URL` or brand defaults. `dev` and `build` run this automatically.
 
 The home page includes Organization JSON-LD structured data.
 
@@ -96,7 +99,8 @@ openapi/           # OpenAPI spec
 public/            # robots.txt, sitemap.xml, og-image.png
 server/            # Hono dev API
 src/api/generated/ # Orval output
-src/config/        # sections registry, SEO metadata
+src/config/        # brand defaults, sections registry, SEO metadata
+scripts/           # generate-seo-static.ts
 src/mocks/         # MSW worker + fixtures
 src/styles/        # modular CSS
 ```

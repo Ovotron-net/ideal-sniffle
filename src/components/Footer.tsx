@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router'
+import { siteBrand } from '../config/seo'
 import { SECTION } from '../config/sections'
 import { useSiteContent } from '../hooks/useSiteContent'
 import { Logo } from './Logo'
@@ -10,10 +11,10 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Link to="/" className="logo footer-logo" aria-label="NexusGuard home">
+          <Link to="/" className="logo footer-logo" aria-label={siteBrand.homeAriaLabel}>
             <Logo />
           </Link>
-          <p className="footer-tagline">Next-generation security operations for the enterprise.</p>
+          <p className="footer-tagline">{siteBrand.tagline}</p>
         </div>
 
         <nav className="footer-nav" aria-label="Footer services">
@@ -33,7 +34,7 @@ export function Footer() {
           <h4>Contact</h4>
           <ul>
             <li>
-              <a href="mailto:security@nexusguard.io">security@nexusguard.io</a>
+              <a href={`mailto:${siteBrand.emails.security}`}>{siteBrand.emails.security}</a>
             </li>
             <li>
               <a href="tel:+18005551234">+1 (800) 555-1234</a>
@@ -47,7 +48,7 @@ export function Footer() {
           <ul className="social-links">
             <li>
               <a
-                href="https://linkedin.com/company/nexusguard"
+                href={siteBrand.social.linkedin}
                 aria-label="LinkedIn"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -59,7 +60,7 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="https://x.com/nexusguard"
+                href={siteBrand.social.x}
                 aria-label="X / Twitter"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -71,7 +72,7 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="https://github.com/nexusguard"
+                href={siteBrand.social.github}
                 aria-label="GitHub"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -86,7 +87,7 @@ export function Footer() {
       </div>
 
       <div className="footer-bottom container">
-        <p>&copy; 2026 NexusGuard. All rights reserved.</p>
+        <p>{siteBrand.copyright}</p>
         <ul className="footer-legal">
           <li>
             <Link to="/privacy">Privacy Policy</Link>

@@ -6,7 +6,7 @@ import { JsonLd } from '../components/JsonLd'
 import { Process } from '../components/Process'
 import { Services } from '../components/Services'
 import { WhyUs } from '../components/WhyUs'
-import { siteSeo } from '../config/seo'
+import { siteBrand, siteSeo } from '../config/seo'
 import { useSiteContent } from '../hooks/useSiteContent'
 
 export function HomePage() {
@@ -44,7 +44,7 @@ export function HomePage() {
           contactPoint: {
             '@type': 'ContactPoint',
             contactType: 'sales',
-            email: 'security@nexusguard.io',
+            email: siteBrand.emails.security,
           },
         }}
       />

@@ -1,8 +1,8 @@
 import { defineConfig } from 'orval'
 
 export default defineConfig({
-  nexusguard: {
-    input: './openapi/nexusguard.openapi.yaml',
+  ovotron: {
+    input: './openapi/ovotron.openapi.yaml',
     output: {
       mode: 'split',
       target: './src/api/generated/endpoints.ts',

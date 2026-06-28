@@ -1,5 +1,6 @@
 import { Link, useRouterState } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
+import { siteBrand } from '../config/seo'
 import { navLinks } from '../config/sections'
 import { useScrollSpy } from '../hooks/useScrollSpy'
 import { Logo } from './Logo'
@@ -51,7 +52,7 @@ export function Header() {
   return (
     <header className={`header${scrolled ? ' scrolled' : ''}`} id="header">
       <nav className="nav container" aria-label="Main navigation">
-        <Link to="/" className="logo" aria-label="NexusGuard home" onClick={closeMenu}>
+        <Link to="/" className="logo" aria-label={siteBrand.homeAriaLabel} onClick={closeMenu}>
           <Logo />
         </Link>
 

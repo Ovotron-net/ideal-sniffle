@@ -1,4 +1,5 @@
 import type { TrustPoint } from '../api/generated/models'
+import { siteBrand } from '../config/seo'
 import { SECTION } from '../config/sections'
 import { useSiteContent } from '../hooks/useSiteContent'
 import { Reveal } from './Reveal'
@@ -23,7 +24,7 @@ export function WhyUs() {
       <div className="container">
         <div className="why-grid">
           <Reveal className="why-content">
-            <span className="section-tag">Why NexusGuard</span>
+            <span className="section-tag">{siteBrand.whyUsTag}</span>
             <h2 id="why-heading" className="section-title">
               Security Partners, Not Checkbox Vendors
             </h2>

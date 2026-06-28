@@ -1,4 +1,8 @@
+import { siteBrand } from '../config/seo'
+
 export function Logo() {
+  const [prefix, accent] = siteBrand.logoParts
+
   return (
     <>
       <span className="logo-icon">
@@ -8,7 +12,8 @@ export function Logo() {
         </svg>
       </span>
       <span className="logo-text">
-        Nexus<span className="logo-accent">Guard</span>
+        {prefix}
+        <span className="logo-accent">{accent}</span>
       </span>
     </>
   )
