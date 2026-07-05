@@ -58,6 +58,7 @@ VITE_API_URL=https://api.ovotron.io/api/v1
 | `npm run build` | Production build |
 | `npm run lint` | Run ESLint |
 | `npm run test` | Run tests (Vitest) |
+| `npm run test:api` | Run API tests only |
 | `npm run test:watch` | Run tests in watch mode |
 | `npm run check` | Lint + test + build (CI gate) |
 | `npm run preview` | Preview production build locally |
