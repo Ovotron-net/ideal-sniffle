@@ -1,10 +1,12 @@
-import { HeadContent, Outlet } from '@tanstack/react-router'
+import { HeadContent, Outlet, useRouterState } from '@tanstack/react-router'
 import { Footer } from '../components/Footer'
 import { GridCanvas } from '../components/GridCanvas'
 import { Header } from '../components/Header'
 import { SiteContentProvider } from '../providers/SiteContentProvider'
 
 export function RootLayout() {
+  const isHome = useRouterState({ select: (state) => state.location.pathname === '/' })
+
   return (
     <SiteContentProvider>
       <HeadContent />
@@ -12,14 +14,13 @@ export function RootLayout() {
         Skip to main content
       </a>
 
-      <GridCanvas />
-      <div className="scan-line" aria-hidden="true" />
-
-      <Header />
+      {!isHome && <GridCanvas />}
+      {!isHome && <div className="scan-line" aria-hidden="true" />}
+      {!isHome && <Header />}
 
       <Outlet />
 
-      <Footer />
+      {!isHome && <Footer />}
     </SiteContentProvider>
   )
 }
