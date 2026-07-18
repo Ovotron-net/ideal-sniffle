@@ -15,12 +15,12 @@ export function RootLayout() {
       </a>
 
       {!isHome && <GridCanvas />}
-      {!isHome && <div className="scan-line" aria-hidden="true" />}
-      {!isHome && <Header />}
+      <div className="scan-line" aria-hidden="true" />
+      <Header />
 
       <Outlet />
 
-      {!isHome && <Footer />}
+      <Footer />
     </SiteContentProvider>
   )
 }

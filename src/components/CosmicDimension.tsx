@@ -679,17 +679,12 @@ export function CosmicDimension() {
   }
 
   return (
-    <main id="main" className="cosmic-experience">
+    <div className="cosmic-experience">
       <canvas ref={canvasRef} className="cosmic-canvas" aria-hidden="true" />
       <div className="cosmic-vignette" aria-hidden="true" />
+      <div className="cosmic-scrim" aria-hidden="true" />
       <div className="cosmic-grain" aria-hidden="true" />
       <div className="cosmic-lens" aria-hidden="true" />
-      <div className="cosmic-hud" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-        <i />
-      </div>
       <button
         className="cosmic-control"
         type="button"
@@ -698,6 +693,6 @@ export function CosmicDimension() {
       >
         <span className={paused ? 'play-icon' : 'pause-icon'} aria-hidden="true" />
       </button>
-    </main>
+    </div>
   )
 }
