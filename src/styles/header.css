@@ -34,18 +34,9 @@
   z-index: 1001;
 }
 
-.logo-icon {
-  width: 36px;
-  height: 36px;
-  color: var(--cyan);
-  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
-}
-
-.logo-accent {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.logo-banner {
+  height: 42px;
+  width: auto;
 }
 
 .nav-menu {
