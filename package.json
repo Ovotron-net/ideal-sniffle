@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
-    "hono": "^4.12.7",
+    "hono": "^4.13.1",
     "msw": "^2.14.6",
     "orval": "^8.19.0",
     "sharp": "^0.34.5",
