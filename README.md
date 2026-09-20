@@ -4,7 +4,7 @@ A modern, animated single-page website for an enterprise cybersecurity business.
 
 ## Prerequisites
 
-- **Node.js** >= 18
+- **Node.js** >= 22.18.0
 - **npm** >= 9
 
 ## Stack
